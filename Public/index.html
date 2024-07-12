@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Task Creator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Motion Task Creator</h1>
+        <form id="taskForm">
+            <label for="name">Task Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate">
+
+            <div class="collapsible">
+                <button type="button" class="collapsible-button">Additional Details</button>
+                <div class="collapsible-content">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate">
+
+                    <label for="duration">Duration:</label>
+                    <select id="duration" name="duration">
+                        <option value="30">30 minutes</option>
+                        <option value="60">1 hour</option>
+                        <option value="90">1.5 hours</option>
+                        <option value="120">2 hours</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <input type="number" id="customDuration" name="customDuration" placeholder="Custom duration in minutes" style="display:none;">
+
+                    <label for="priority">Priority:</label>
+                    <select id="priority" name="priority">
+                        <option value="ASAP">ASAP</option>
+                        <option value="HIGH">High</option>
+                        <option value="MEDIUM" selected>Medium</option>
+                        <option value="LOW">Low</option>
+                    </select>
+
+                    <label for="deadlineType">Deadline Type:</label>
+                    <select id="deadlineType" name="deadlineType">
+                        <option value="SOFT" selected>Soft</option>
+                        <option value="HARD">Hard</option>
+                        <option value="NONE">None</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Add Task</button>
+        </form>
+
+        <div id="result"></div>
+
+        <div id="workspaceSection" class="collapsible collapsed">
+            <button type="button" class="collapsible-button">Workspace Selection</button>
+            <div class="collapsible-content">
+                <label for="workspaceSelect">Select Workspace:</label>
+                <select id="workspaceSelect"></select>
+                <button id="setDefaultWorkspace">Set as Default</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
